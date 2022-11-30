@@ -34,9 +34,9 @@
     </div>
     <script>
       const params = new URL(window.location.href);
-      const urlID = params.searchParams.get("id");
+      const dateID = params.searchParams.get("date");
       const posts = JSON.parse(window.localStorage.getItem("posts"));
-      const post = posts.find((searchPost) => searchPost.id == urlID);
+      const post = posts.find((searchPost) => searchPost.date == dateID);
 
       const postContent = document.getElementById("postContent");
 
@@ -51,7 +51,7 @@
       const deletePost = () => {
         if (window.confirm("Are you sure you want to delete this post?")) {
           const postIndex = posts.findIndex(
-            (searchPost) => searchPost.id == urlID
+            (searchPost) => searchPost.id == dateID
           );
           posts.splice(postIndex, 1);
           window.localStorage.setItem("posts", JSON.stringify(posts));

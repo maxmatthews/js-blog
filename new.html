@@ -48,7 +48,7 @@
           title: event.target.elements.title.value,
           tagline: event.target.elements.tagline.value,
           content: event.target.elements.content.value,
-          id: Date.now(),
+          date: Date.now(),
         });
 
         window.localStorage.setItem("posts", JSON.stringify(posts));
